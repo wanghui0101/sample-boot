@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.coamctech.sample.boot.autoconfigure.redis.RedisOpsAutoConfiguration,\
+com.coamctech.sample.boot.autoconfigure.fastdfs.FastDfsAutoConfiguration,\
+com.coamctech.sample.boot.autoconfigure.zookeeper.curator.CuratorAutoConfiguration

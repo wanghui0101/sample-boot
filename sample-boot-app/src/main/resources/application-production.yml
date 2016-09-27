@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: "jdbc:log4jdbc:mysql://172.16.49.61:5627/sampledb?useUnicode=true&characterEncoding=utf-8"
+    username: bxhr
+    password: Passw0rd
+    tomcat:
+      initial-size: 10
+      min-idle: 10
+      max-idle: 30
+      max-active: 30
+      #min-evictable-idle-time-millis: 72000
+      #time-between-eviction-runs-millis: 5000
+      #test-while-idle: true
+      #validation-interval: 30000
+      #validation-query-timeout: 5
+      #validation-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 23.2.160.42:26379,23.2.160.44:26379,23.2.160.45:26379
+      password: dfjk_b2b
+    pool:
+      min-idle: 5
+      max-active: 100
+      max-idle: 10
+      max-wait: -1
+
+coamctech:
+  fastdfs:
+    connect-timeout: 10
+    network-timeout: 30
+    charset: UTF-8
+    http-tracker-port: 8080
+    http-anti-steal-token: false
+    http-secret-key: FastDFS1234567890
+    tracker-server: 172.16.49.243:22122
+  zookeeper:
+    curator:
+      connection-string: 23.2.160.42:2181,23.2.160.43:2181,23.2.160.44:2181
+      connection-timeout: 5000
+      session-timeout: 10000
+      retry-policy-type: exponential-backoff
+      retry-policy-base-sleep-time: 5000
+      retry-policy-max-retries: 3
+      retry-policy-max-sleep-time: 1000
